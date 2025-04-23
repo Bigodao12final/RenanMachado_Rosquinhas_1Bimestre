@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosquinhas do Renan</title>
+    <link rel="stylesheet" href="css/rosquinhas.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Rosquinhas do Renan</h1>
+    </header>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <div class="product-selection">
+                <h2>Escolha suas rosquinhas</h2>
+                <div class="carousel-container">
+                    <!-- Botão de seta esquerda -->
+                    <button class="arrow left" onclick="changeProduct('prev')">&#10094;</button>
+                    
+                    <!-- Carrossel com 3 imagens -->
+                    <div class="product-images">
+                        <div class="product-image">
+                            <img id="productImg1" src="img/cremosa.png" alt="Rosquinha 1">
+                        </div>
+                        <div class="product-image middle">
+                            <img id="productImg2" src="img/shutterstock_1505891336-copy-scaled.jpg" alt="Rosquinha 2">
+                        </div>
+                        <div class="product-image">
+                            <img id="productImg3" src="img/Chocolate-Glazed-Donut-Product-Card.webp" alt="Rosquinha 3">
+                        </div>
+                    </div>
+                    
+                    <!-- Botão de seta direita -->
+                    <button class="arrow right" onclick="changeProduct('next')">&#10095;</button>
+                </div>
+            </div>
+
+            <div class="purchase">
+                <button id="buyButton" disabled>Comprar</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-info">
+            <p>Informações sobre a loja: Somos uma loja especializada em rosquinhas fresquinhas e deliciosas.</p>
+            <p>Telefone para contato: <strong>(11) 99999-9999</strong></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* Estilo básico para o header e footer */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header, footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .footer-info {
+    font-size: 14px;
+}
+
+/* Estilo do carrossel */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.product-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.product-image {
+    width: 200px;
+    margin: 0 10px;
+    opacity: 0.7;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.product-image.middle {
+    transform: scale(1.2);
+    opacity: 1;
+    z-index: 1;
+}
+
+.product-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.arrow {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+/* Estilo do botão de comprar */
+.purchase {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#buyButton {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#buyButton:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
