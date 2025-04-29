@@ -1,39 +1,48 @@
-// Array de imagens das rosquinhas
-const productImages = [
-    "img/cremosa.png",   // Imagem 1
-    "img/chocolate.png",  // Imagem 2
-    "img/baunilha.png",   // Imagem 3
-    "img/strawberry.png"  // Imagem 4 (adicionada para exemplo)
-];
+let cart = [];
 
-let currentIndex = 1; // Índice da imagem inicial (começando pelo meio)
+// Função para adicionar item ao carrinho
+function addToCart(button) {
+    const container = button.parentElement;
+    const qtyInput = container.querySelector('input.qty');
+    const quantity = parseInt(qtyInput.value);
+    const name = qtyInput.getAttribute('data-name');
+    const price = parseFloat(qtyInput.getAttribute('data-price'));
 
-// Função para mudar as imagens
-function changeProduct(direction) {
-    const images = document.querySelectorAll('.product-image img');
-    const imageContainers = document.querySelectorAll('.product-image');
-
-    // Se a direção for 'prev', diminui o índice (voltar para a imagem anterior)
-    if (direction === 'prev') {
-        currentIndex = (currentIndex - 1 + productImages.length) % productImages.length;
-    } 
-    // Se a direção for 'next', aumenta o índice (ir para a próxima imagem)
-    else if (direction === 'next') {
-        currentIndex = (currentIndex + 1) % productImages.length;
+    if (quantity > 0) {
+        const existing = cart.find(item => item.name === name);
+        if (existing) {
+            existing.quantity += quantity;
+        } else {
+            cart.push({ name, price, quantity });
+        }
+        updateCart();
+        qtyInput.value = 0;  // Reseta a quantidade após adicionar
     }
+}
 
-    // Atualiza as três imagens exibidas com a nova posição
-    images[0].src = productImages[(currentIndex - 1 + productImages.length) % productImages.length];
-    images[1].src = productImages[currentIndex];
-    images[2].src = productImages[(currentIndex + 1) % productImages.length];
+// Função para atualizar o carrinho
+function updateCart() {
+    const cartItems = document.getElementById("cartItems");
+    const totalElement = document.getElementById("total");
+    cartItems.innerHTML = "";
 
-    // Adiciona as classes de destaque
-    imageContainers.forEach(container => container.classList.remove('middle')); // Remove a classe 'middle' de todas
-    imageContainers[1].classList.add('middle'); // Adiciona 'middle' à imagem do meio
+    let total = 0;
 
-    // Habilita o botão de compra
-    document.getElementById("buyButton").disabled = false;
+    cart.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} x${item.quantity} - R$ ${(item.price * item.quantity).toFixed(2)}`;
+        cartItems.appendChild(li);
+        total += item.price * item.quantity;
+    });
 
-    // Move as imagens para o lado (transição suave)
-    document.querySelector('.product-images').style.transform = `translateX(-${200 * currentIndex}px)`;
+    totalElement.textContent = total.toFixed(2);
+}
+function changeQuantity(button, delta) {
+    const qtySpan = button.parentElement.querySelector('.qty');
+    let currentQty = parseInt(qtySpan.textContent);
+
+    // Verificar se o valor é maior que 0 antes de diminuir a quantidade
+    if (currentQty + delta >= 0) {
+        qtySpan.textContent = currentQty + delta;
+    }
 }
