@@ -1,58 +1,201 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos - Rosquinhas do Renan</title>
-    <link rel="stylesheet" href="css/rosquinhas.css">
-</head>
-<body>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+}
 
-    <header>
-        <h1>Rosquinhas do Renan</h1>
-    </header>
+header {
+    background-color: #f8b500;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
 
-    <main>
-        <h2>Escolha suas Rosquinhas</h2>
+header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    float: right;
+    margin-right: 20px;
+}
 
-        <div class="product-list">
-            <div class="product">
-                <img src="img/product1.jpg" alt="Rosquinha Cremosa">
-                <h3>Rosquinha Cremosa</h3>
-                <p>R$ 5,00</p>
-                <button onclick="addToCart('Rosquinha Cremosa', 5.00)">Adicionar ao Carrinho</button>
-            </div>
+main {
+    padding: 20px;
+}
 
-            <div class="product">
-                <img src="img/product2.jpg" alt="Rosquinha Tradicional">
-                <h3>Rosquinha Tradicional</h3>
-                <p>R$ 4,50</p>
-                <button onclick="addToCart('Rosquinha Tradicional', 4.50)">Adicionar ao Carrinho</button>
-            </div>
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    gap: 20px;
+}
 
-            <div class="product">
-                <img src="img/product3.jpg" alt="Rosquinha de Chocolate">
-                <h3>Rosquinha de Chocolate</h3>
-                <p>R$ 6,00</p>
-                <button onclick="addToCart('Rosquinha de Chocolate', 6.00)">Adicionar ao Carrinho</button>
-            </div>
+.product {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
 
-            <div class="product">
-                <img src="img/product4.jpg" alt="Rosquinha de Morango">
-                <h3>Rosquinha de Morango</h3>
-                <p>R$ 5,50</p>
-                <button onclick="addToCart('Rosquinha de Morango', 5.50)">Adicionar ao Carrinho</button>
-            </div>
-        </div>
-    </main>
-    <footer class="footer-bar">
-        <div class="footer-content">
-          <span>&copy; 2025 Rosquinhas do Renan</span>
-          <span>Contato: (11) 99999-9999</span>
-          <a href="carrinho.html" class="cart-link">🛒 Carrinho</a>
-        </div>
-      </footer>
-      
-    <script src="rosquinhas.js"></script>
-</body>
-</html>
+.product img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+    .product-list {
+        grid-template-columns: 1fr; /* Uma coluna no celular */
+    }
+}
+.cart-container {
+    padding: 20px;
+  }
+  
+  #cartItems {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+  }
+  
+  .cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .item-info h3 {
+    margin: 0 0 5px;
+  }
+  
+  .item-info p {
+    margin: 2px 0;
+  }
+  
+  .total {
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  
+  .checkout-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #f8b500;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .remove-button {
+    background-color: transparent;
+    border: none;
+    color: #c00;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
+  .cart-item {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 15px 0;
+  }
+  .footer-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8b500;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    z-index: 999;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .cart-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .checkout-container {
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  form label {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  .payment-details {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .payment-details label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .payment-details {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .payment-details label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
