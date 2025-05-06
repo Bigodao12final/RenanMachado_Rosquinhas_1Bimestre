@@ -3,155 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rosquinhas do Renan</title>
+    <title>Produtos - Rosquinhas do Renan</title>
     <link rel="stylesheet" href="css/rosquinhas.css">
 </head>
 <body>
-    <header class="header">
+
+    <header>
         <h1>Rosquinhas do Renan</h1>
     </header>
 
-    <main class="main-content">
-        <!-- Legenda acima das opções -->
-        <h2>Escolha suas rosquinhas</h2>
+    <main>
+        <h2>Escolha suas Rosquinhas</h2>
 
         <div class="product-list">
-            <!-- Primeira linha de rosquinhas -->
-            <div class="product-row">
-                <div>
-                    <h3>Rosquinha Cremosa</h3>
-                    <p>Chocolate branco, baunilha, massa amanteigada</p>
-                    <p>R$ 5,00</p>
-                </div>
-                <img src="img/rosquinha1.jpg" alt="Rosquinha Cremosa">
-                <div class="quantity-controls">
-                    <button onclick="changeQuantity(this, -1)">-</button>
-                    <span class="qty" data-name="Rosquinha Cremosa" data-price="5.00">0</span>
-                    <button onclick="changeQuantity(this, 1)">+</button>
-                    <button onclick="addToCart(this)">Adicionar</button>
-                </div>
+            <div class="product">
+                <img src="img/product1.jpg" alt="Rosquinha Cremosa">
+                <h3>Rosquinha Cremosa</h3>
+                <p>R$ 5,00</p>
+                <button onclick="addToCart('Rosquinha Cremosa', 5.00)">Adicionar ao Carrinho</button>
             </div>
 
-            <div class="product-row">
-                <div>
-                    <h3>Rosquinha Tradicional</h3>
-                    <p>Açúcar, canela, massa tradicional</p>
-                    <p>R$ 4,50</p>
-                </div>
-                <img src="img/rosquinha2.jpg" alt="Rosquinha Tradicional">
-                <div class="quantity-controls">
-                    <button onclick="changeQuantity(this, -1)">-</button>
-                    <span class="qty" data-name="Rosquinha Tradicional" data-price="4.50">0</span>
-                    <button onclick="changeQuantity(this, 1)">+</button>
-                    <button onclick="addToCart(this)">Adicionar</button>
-                </div>
+            <div class="product">
+                <img src="img/product2.jpg" alt="Rosquinha Tradicional">
+                <h3>Rosquinha Tradicional</h3>
+                <p>R$ 4,50</p>
+                <button onclick="addToCart('Rosquinha Tradicional', 4.50)">Adicionar ao Carrinho</button>
             </div>
 
-            <div class="product-row">
-                <div>
-                    <h3>Rosquinha de Chocolate</h3>
-                    <p>Cacau 70%, cobertura de chocolate preto</p>
-                    <p>R$ 6,00</p>
-                </div>
-                <img src="img/rosquinha3.jpg" alt="Rosquinha de Chocolate">
-                <div class="quantity-controls">
-                    <button onclick="changeQuantity(this, -1)">-</button>
-                    <span class="qty" data-name="Rosquinha de Chocolate" data-price="6.00">0</span>
-                    <button onclick="changeQuantity(this, 1)">+</button>
-                    <button onclick="addToCart(this)">Adicionar</button>
-                </div>
+            <div class="product">
+                <img src="img/product3.jpg" alt="Rosquinha de Chocolate">
+                <h3>Rosquinha de Chocolate</h3>
+                <p>R$ 6,00</p>
+                <button onclick="addToCart('Rosquinha de Chocolate', 6.00)">Adicionar ao Carrinho</button>
             </div>
 
-            <!-- Segunda linha de rosquinhas -->
-            <div class="product-row">
-                <div>
-                    <h3>Rosquinha de Morango</h3>
-                    <p>Morango natural, glacê rosa, massa fofa</p>
-                    <p>R$ 5,50</p>
-                </div>
-                <img src="img/rosquinha4.jpg" alt="Rosquinha de Morango">
-                <div class="quantity-controls">
-                    <button onclick="changeQuantity(this, -1)">-</button>
-                    <span class="qty" data-name="Rosquinha de Morango" data-price="5.50">0</span>
-                    <button onclick="changeQuantity(this, 1)">+</button>
-                    <button onclick="addToCart(this)">Adicionar</button>
-                </div>
+            <div class="product">
+                <img src="img/product4.jpg" alt="Rosquinha de Morango">
+                <h3>Rosquinha de Morango</h3>
+                <p>R$ 5,50</p>
+                <button onclick="addToCart('Rosquinha de Morango', 5.50)">Adicionar ao Carrinho</button>
             </div>
-
-            <div class="product-row">
-                <div>
-                    <h3>Rosquinha de Coco</h3>
-                    <p>Coco ralado, leite condensado, massa leve</p>
-                    <p>R$ 5,20</p>
-                </div>
-                <img src="img/rosquinha5.jpg" alt="Rosquinha de Coco">
-                <div class="quantity-controls">
-                    <button onclick="changeQuantity(this, -1)">-</button>
-                    <span class="qty" data-name="Rosquinha de Coco" data-price="5.20">0</span>
-                    <button onclick="changeQuantity(this, 1)">+</button>
-                    <button onclick="addToCart(this)">Adicionar</button>
-                </div>
-            </div>
-
-            <div class="product-row">
-                <div>
-                    <h3>Rosquinha de Limão</h3>
-                    <p>Limão siciliano, glacê cítrico</p>
-                    <p>R$ 5,70</p>
-                </div>
-                <img src="img/rosquinha6.jpg" alt="Rosquinha de Limão">
-                <div class="quantity-controls">
-                    <button onclick="changeQuantity(this, -1)">-</button>
-                    <span class="qty" data-name="Rosquinha de Limão" data-price="5.70">0</span>
-                    <button onclick="changeQuantity(this, 1)">+</button>
-                    <button onclick="addToCart(this)">Adicionar</button>
-                </div>
-            </div>
-
-            <!-- Terceira linha de rosquinhas -->
-            <div class="product-row">
-                <div>
-                    <h3>Rosquinha de Uva</h3>
-                    <p>Uva passa, açúcar, massa doce</p>
-                    <p>R$ 5,80</p>
-                </div>
-                <img src="img/rosquinha7.jpg" alt="Rosquinha de Uva">
-                <div class="quantity-controls">
-                    <button onclick="changeQuantity(this, -1)">-</button>
-                    <span class="qty" data-name="Rosquinha de Uva" data-price="5.80">0</span>
-                    <button onclick="changeQuantity(this, 1)">+</button>
-                    <button onclick="addToCart(this)">Adicionar</button>
-                </div>
-            </div>
-
-            <div class="product-row">
-                <div>
-                    <h3>Rosquinha de Canela</h3>
-                    <p>Canela, açúcar mascavo, massa macia</p>
-                    <p>R$ 4,80</p>
-                </div>
-                <img src="img/rosquinha8.jpg" alt="Rosquinha de Canela">
-                <div class="quantity-controls">
-                    <button onclick="changeQuantity(this, -1)">-</button>
-                    <span class="qty" data-name="Rosquinha de Canela" data-price="4.80">0</span>
-                    <button onclick="changeQuantity(this, 1)">+</button>
-                    <button onclick="addToCart(this)">Adicionar</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Carrinho -->
-        <div class="cart">
-            <h2>Carrinho</h2>
-            <ul id="cartItems"></ul>
-            <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
         </div>
     </main>
-
-    <footer class="footer">
-        <p>Loja especializada em rosquinhas fresquinhas e deliciosas. Contato: (11) 99999-9999</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <footer class="footer-bar">
+        <div class="footer-content">
+          <span>&copy; 2025 Rosquinhas do Renan</span>
+          <span>Contato: (11) 99999-9999</span>
+          <a href="carrinho.html" class="cart-link">🛒 Carrinho</a>
+        </div>
+      </footer>
+      
+    <script src="rosquinhas.js"></script>
 </body>
 </html>
