@@ -1,95 +1,58 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Rosquinhas do Renan</title>
+    <link rel="stylesheet" href="css/rosquinhas.css">
+</head>
+<body>
 
-.header, .footer {
-    background-color: #f8b500;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
+    <header>
+        <h1>Rosquinhas do Renan</h1>
+    </header>
 
-.main-content {
-    padding: 20px;
-}
+    <main>
+        <h2>Escolha suas Rosquinhas</h2>
 
-.product-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-}
+        <div class="product-list">
+            <div class="product">
+                <img src="img/product1.jpg" alt="Rosquinha Cremosa">
+                <h3>Rosquinha Cremosa</h3>
+                <p>R$ 5,00</p>
+                <button onclick="addToCart('Rosquinha Cremosa', 5.00)">Adicionar ao Carrinho</button>
+            </div>
 
-.product-row {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 300px;
-    display: flex;
-    padding: 15px;
-    align-items: center;
-    gap: 15px;
-}
+            <div class="product">
+                <img src="img/product2.jpg" alt="Rosquinha Tradicional">
+                <h3>Rosquinha Tradicional</h3>
+                <p>R$ 4,50</p>
+                <button onclick="addToCart('Rosquinha Tradicional', 4.50)">Adicionar ao Carrinho</button>
+            </div>
 
-.product-row img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-}
+            <div class="product">
+                <img src="img/product3.jpg" alt="Rosquinha de Chocolate">
+                <h3>Rosquinha de Chocolate</h3>
+                <p>R$ 6,00</p>
+                <button onclick="addToCart('Rosquinha de Chocolate', 6.00)">Adicionar ao Carrinho</button>
+            </div>
 
-.product-row div {
-    flex-grow: 1;
-}
-
-.product-row h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.product-row p {
-    margin: 5px 0;
-    color: #666;
-}
-
-.product-row input {
-    width: 60px;
-    padding: 5px;
-    margin-right: 10px;
-}
-
-.product-row button {
-    padding: 5px 10px;
-    background-color: #f8b500;
-    border: none;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.product-row button:hover {
-    background-color: #e89b00;
-}
-
-.cart {
-    margin-top: 40px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.cart ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.cart p {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
+            <div class="product">
+                <img src="img/product4.jpg" alt="Rosquinha de Morango">
+                <h3>Rosquinha de Morango</h3>
+                <p>R$ 5,50</p>
+                <button onclick="addToCart('Rosquinha de Morango', 5.50)">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </main>
+    <footer class="footer-bar">
+        <div class="footer-content">
+          <span>&copy; 2025 Rosquinhas do Renan</span>
+          <span>Contato: (11) 99999-9999</span>
+          <a href="carrinho.html" class="cart-link">🛒 Carrinho</a>
+        </div>
+      </footer>
+      
+    <script src="rosquinhas.js"></script>
+</body>
+</html>
