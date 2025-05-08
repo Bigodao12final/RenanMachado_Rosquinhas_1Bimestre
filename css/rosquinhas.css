@@ -404,3 +404,35 @@ button:hover {
 .footer-link:hover {
   text-decoration: underline;
 }
+/* Botão fixo responsivo */
+.payment-confirm-container {
+  position: sticky;
+  bottom: 20px;
+  margin-top: 30px;
+  text-align: center;
+  z-index: 100;
+}
+
+#confirmPaymentBtn {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+}
+
+#confirmPaymentBtn:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.btn-icon {
+  margin-right: 8px;
+}
