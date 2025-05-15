@@ -3,92 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Carrinho - Rosquinhas do Renan</title>
+  <title>Rosquinhas do Renan</title>
   <link rel="stylesheet" href="css/rosquinhas.css" />
 </head>
 <body>
 
   <header>
-    <h1>Seu Carrinho</h1>
-    <a href="rosquinhas.html">Voltar às Rosquinhas</a>
+    <h1>Rosquinhas do Renan</h1>
   </header>
 
   <main>
-    <div class="cart-container">
-      <ul id="cartItems"></ul>
-      <p class="total"><strong>Total:</strong> R$ <span id="total">0.00</span></p>
-      <a href="pagamento.html" class="checkout-button">Ir para Pagamento</a>
-    </div>
-  </main>
+    <div class="product-list">
+      <!-- Produto 1 -->
+      <div class="product">
+        <img src="img/cremosa.jpg" alt="Rosquinha Cremosa" />
+        <h3>Rosquinha Cremosa</h3>
+        <p>R$ 5,00</p>
+        <button onclick="addToCart('Rosquinha Cremosa', 5.00)">Adicionar ao Carrinho</button>
+      </div>
 
-  <script>
-    const productImages = {
-      'Rosquinha Cremosa': 'img/cremosa.jpg',
-      'Rosquinha Tradicional': 'img/tradicional.jpg',
-      'Rosquinha de Chocolate': 'img/chocolate.jpg',
-      'Rosquinha de Morango': 'img/morango.jpg',
-      'Rosquinha de Baunilha':'img/baunilha.jpg',
-      'Rosquinha Doce de Leite':'img/docedeleite.jpg',
-      'Rosquinha de Limão':'img/limao.jpg',
-      'Rosquinha de Coco':'img/coco.jpg',
-      'Rosquinha Recheada':'img/recheada.jpg',
-      'Rosquinha de Flocos':'img/flocos.jpg',
-      'Rosquinha com Gotas de Chocolate':'img/gotasdechocolate.jpg',
-      'Rosquinha de Maracujá':'img/maracuja.jpg',
-      'Rosquinha de Canela':'img/canela.jpg',
-      'Rosquinha de Brigadeiro':'img/brigadeiro.jpg',
-      'Rosquinha de Granulado':'img/granulado.jpg'
+      <!-- Produto 2 -->
+      <div class="product">
+        <img src="img/tradicional.jpg" alt="Rosquinha Tradicional" />
+        <h3>Rosquinha Tradicional</h3>
+        <p>R$ 4,50</p>
+        <button onclick="addToCart('Rosquinha Tradicional', 4.50)">Adicionar ao Carrinho</button>
+      </div>
 
-    };
+      <!-- Produto 3 -->
+      <div class="product">
+        <img src="img/chocolate.jpg" alt="Rosquinha de Chocolate" />
+        <h3>Rosquinha de Chocolate</h3>
+        <p>R$ 6,00</p>
+        <button onclick="addToCart('Rosquinha de Chocolate', 6.00)">Adicionar ao Carrinho</button>
+      </div>
 
-    function loadCart() {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const cartItems = document.getElementById('cartItems');
-      const totalEl = document.getElementById('total');
-      cartItems.innerHTML = '';
-      let total = 0;
+      <!-- Produto 4 -->
+      <div class="product">
+        <img src="img/morango.jpg" alt="Rosquinha de Morango" />
+        <h3>Rosquinha de Morango</h3>
+        <p>R$ 5,50</p>
+        <button onclick="addToCart('Rosquinha de Morango', 5.50)">Adicionar ao Carrinho</button>
+      </div>
 
-      cart.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.classList.add('cart-item');
+      <!-- Produto 5 -->
+      <div class="product">
+        <img src="img/docedeleite.jpg" alt="Rosquinha Doce de Leite" />
+        <h3>Rosquinha Doce de Leite</h3>
+        <p>R$ 5,70</p>
+        <button onclick="addToCart('Rosquinha Doce de Leite', 5.70)">Adicionar ao Carrinho</button>
+      </div>
 
-        const img = document.createElement('img');
-        img.src = productImages[item.name] || 'img/default.jpg';
-        img.alt = item.name;
+      <!-- Produto 6 -->
+      <div class="product">
+        <img src="img/limao.jpg" alt="Rosquinha de Limão" />
+        <h3>Rosquinha de Limão</h3>
+        <p>R$ 4,80</p>
+        <button onclick="addToCart('Rosquinha de Limão', 4.80)">Adicionar ao Carrinho</button>
+      </div>
 
-        const info = document.createElement('div');
-        info.classList.add('item-info');
-        info.innerHTML = `
-          <h3>${item.name}</h3>
-          <p>Quantidade: ${item.quantity}</p>
-          <p>Preço Unitário: R$ ${item.price.toFixed(2)}</p>
-          <p>Total: R$ ${(item.price * item.quantity).toFixed(2)}</p>
-        `;
+      <!-- Produto 7 -->
+      <div class="product">
+        <img src="img/baunilha.jpg" alt="Rosquinha de Baunilha" />
+        <h3>Rosquinha de Baunilha</h3>
+        <p>R$ 4,20</p>
+        <button onclick="addToCart('Rosquinha de Baunilha', 4.20)">Adicionar ao Carrinho</button>
+      </div>
 
-        const removeBtn = document.createElement('button');
-        removeBtn.textContent = '❌';
-        removeBtn.classList.add('remove-button');
-        removeBtn.onclick = () => removeFromCart(index);
+      <!-- Produto 8 -->
+      <div class="product">
+        <img src="img/coco.jpg" alt="Rosquinha de Coco" />
+        <h3>Rosquinha de Coco</h3>
+        <p>R$ 5,10</p>
+        <button onclick="addToCart('Rosquinha de Coco', 5.10)">Adicionar ao Carrinho</button>
+      </div>
 
-        li.appendChild(img);
-        li.appendChild(info);
-        li.appendChild(removeBtn);
-        cartItems.appendChild(li);
+      <!-- Produto 9 -->
+      <div class="product">
+        <img src="img/recheada.jpg" alt="Rosquinha Recheada" />
+        <h3>Rosquinha Recheada</h3>
+        <p>R$ 7,00</p>
+        <button onclick="addToCart('Rosquinha Recheada', 7.00)">Adicionar ao Carrinho</button>
+      </div>
 
-        total += item.price * item.quantity;
-      });
+      <!-- Produto 10 -->
+      <div class="product">
+        <img src="img/flocos.jpg" alt="Rosquinha de Flocos" />
+        <h3>Rosquinha de Flocos</h3>
+        <p>R$ 5,40</p>
+        <button onclick="addToCart('Rosquinha de Flocos', 5.40)">Adicionar ao Carrinho</button>
+      </div>
 
-      totalEl.textContent = total.toFixed(2);
-    }
+      <!-- Produto 11 -->
+      <div class="product">
+        <img src="img/gotasdechocolate.jpg" alt="Rosquinha com Gotas de Chocolate" />
+        <h3>Rosquinha com Gotas de Chocolate</h3>
+        <p>R$ 6,20</p>
+        <button onclick="addToCart('Rosquinha com Gotas de Chocolate', 6.20)">Adicionar ao Carrinho</button>
+      </div>
 
-    function removeFromCart(index) {
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.splice(index, 1);
-      localStorage.setItem('cart', JSON.stringify(cart));
-      loadCart(); // Atualiza a tela
-    }
+      <!-- Produto 12 -->
+      <div class="product">
+        <img src="img/maracuja.jpg" alt="Rosquinha de Maracujá" />
+        <h3>Rosquinha de Maracujá</h3>
+        <p>R$ 6,50</p>
+        <button onclick="addToCart('Rosquinha de Maracujá', 6.50)">Adicionar ao Carrinho</button>
+      </div>
 
-    loadCart();
-  </script>
+      <!-- Produto 13 -->
+      <div class="product">
+        <img src="img/canela.jpg" alt="Rosquinha de Canela" />
+        <h3>Rosquinha de Canela</h3>
+        <p>R$ 6,80</p>
+        <button onclick="addToCart('Rosquinha de Canela', 6.80)">Adicionar ao Carrinho</button>
+      </div>
+
+      <!-- Produto 14 -->
+      <div class="product">
+        <img src="img/brigadeiro.jpg" alt="Rosquinha de Brigadeiro" />
+        <h3>Rosquinha de Brigadeiro</h3>
+        <p>R$ 5,30</p>
+        <button onclick="addToCart('Rosquinha de Brigadeiro', 5.30)">Adicionar ao Carrinho</button>
+      </div>
+
+      <!-- Produto 15 -->
+      <div class="product">
+        <img src="img/granulado.jpg" alt="Rosquinha de Granulado" />
+        <h3>Rosquinha com Granulado</h3>
+        <p>R$ 4,90</p>
+        <button onclick="addToCart('Rosquinha de Granulado', 4.90)">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="footer-bar">
+        <div class="footer-content">
+          <a href="https://www.instagram.com/renan.big/.html" class="footer-link">Contato</a>
+          <a href="sobre.html" class="footer-link">Sobre</a>
+          <a href="carrinho.html" class="footer-link">Carrinho</a>
+        </div>
+      </div>
+
+  <script src="rosquinhas.js"></script>
 </body>
 </html>
